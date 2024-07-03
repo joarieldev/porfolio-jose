@@ -1,0 +1,33 @@
+---
+import Project from './Project.astro'
+
+const tags = {
+  React: {
+    name: 'React',
+    class:
+      'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-gray-300 dark:bg-sky-600/40 px-2 py-1 rounded-full',
+    icon: '/React.svg',
+  },
+  TailwindCss: {
+    name: 'TailwindCSS',
+    class:
+      'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-gray-300 dark:bg-cyan-600/40 px-2 py-1 rounded-full',
+    icon: '/TailwindCSS.svg',
+  },
+}
+const projects = [
+  {
+    title: 'Adoptar Mascotas',
+    description:
+      'Sitio Web para la adopciòn de mascotas. Mas de 5 especies para adoptar. Creada desde cero con React y Tailwind CSS.',
+    link: 'https://adoptar-mascota.vercel.app/',
+    github: 'https://github.com/josearidev/AdoptarMascota',
+    image: '/projects/adoptar-mascota.webp',
+    tags: [tags.React, tags.TailwindCss],
+  },
+]
+---
+
+<article class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+  {projects.map((project) => <Project {...project} />)}
+</article>

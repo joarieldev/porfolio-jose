@@ -1,0 +1,56 @@
+---
+import Theme from './Theme.astro'
+
+const navItems = [
+  {
+    title: 'Experiencia',
+    label: 'experiencia',
+    url: '/#experience',
+  },
+  {
+    title: 'Proyectos',
+    label: 'proyectos',
+    url: '/#projects',
+  },
+  {
+    title: 'Sobre mí',
+    label: 'sobre-mi',
+    url: '/#about',
+  },
+]
+---
+
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto sm:mt-2"
+>
+  <nav
+    class="flex gap-4 text-sm font-semibold sm:rounded-2xl text-gray-800 dark:text-gray-200 justify-center items-center max-sm:w-full max-sm:text-xs max-sm:font-medium"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="block px-2 py-2 transition hover:text-[#ca6702] dark:hover:text-[#94d2bd]"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
+    <Theme />
+  </nav>
+</header>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur ring-gray-600/10;
+    }
+  }
+</style> 

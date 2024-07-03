@@ -1,0 +1,72 @@
+<article class="flex flex-col items-center">
+  <img class="size-20 mb-3 rounded-full max-sm:size-16" src="/me.webp" alt="jose foto" />
+  <h1
+    class="mb-1 text-4xl font-bold text-gray-800 dark:text-gray-200 max-sm:text-3xl"
+  >
+    Hola, soy José
+  </h1>
+  <p class="text-lg font-medium text-gray-700 dark:text-gray-300 max-sm:text-base">
+    +1 año y medio de experiencia
+    <strong
+      class="animate-text-gradient bg-gradient-to-r from-[#005f73] via-[#0a9396] to-[#005f73] dark:bg-gradient-to-r dark:from-[#bb3e03] dark:via-[#ca6702] dark:to-[#bb3e03] bg-[200%_auto] bg-clip-text text-xl text-transparent"
+    >
+      Desarrollador Web Frontend
+    </strong>. de Argentina
+  </p>
+  <div class="flex flex-wrap justify-center gap-2 mt-4 md:mt-6">
+    <a
+      href="mailto:joariel17@gmail.com"
+      id="gmail"
+      onclick="copyMail()"
+      class="flex gap-2 items-center py-2 px-4 text-sm font-semibold rounded-lg border bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-[#C5221F] hover:bg-[#C5221F]/20 dark:hover:bg-[#C5221F]/30 transition max-sm:text-xs max-sm:font-medium w-[92px] sm:w-[98px]"
+    >
+      <img src="/Gmail.svg" alt="linkedin logo" class="size-4" />
+      Gmail
+    </a>
+    <a
+      href="https://www.linkedin.com/in/jos%C3%A9-mart%C3%ADnez-105578238/"
+      target="_blank"
+      class="flex gap-2 items-center py-2 px-4 text-sm font-semibold rounded-lg border bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-[#0A66C2] hover:bg-[#0A66C2]/20 dark:hover:bg-[#0A66C2]/30 transition max-sm:text-xs max-sm:font-medium"
+    >
+      <img src="/LinkedIn.svg" alt="linkedin logo" class="size-4" />
+      LinkedIn
+    </a>
+    <a
+      href="https://github.com/josearidev"
+      target="_blank"
+      class="flex gap-2 items-center py-2 px-4 text-sm font-semibold rounded-lg border bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-[#000000] dark:border-gray-500 hover:bg-[#000000]/20 dark:hover:bg-gray-500/40 transition max-sm:text-xs max-sm:font-medium"
+    >
+      <img src="/GitHub.svg" alt="git-hub logo" class="size-4" />
+      GitHub
+    </a>
+  </div>
+</article>
+
+<script is:inline>
+  const copyMail = async () => {
+    const mailto = 'joariel17@gmail.com'
+    const mail = document.getElementById('gmail')
+    const mailCss = mail.style.cssText
+    const mailElement = document.getElementById('gmail').innerHTML
+
+    mail.classList.add('duration-500')
+
+    await navigator.clipboard
+      .writeText(mailto)
+      .then(function () {
+        mail.style.backgroundColor = 'rgba(47, 158, 68, .30)'
+        mail.style.borderColor = 'rgba(47, 158, 68, 1)'
+        mail.textContent = 'Copiado!'
+        setTimeout(() => {
+          mail.style.cssText = mailCss
+          document.getElementById('gmail').innerHTML = mailElement
+          setTimeout(() => {
+            mail.classList.remove('duration-500')
+          }, 1000)
+        }, 1500)
+      })
+      .catch(function (error) {
+        console.error('Error al copiar el valor al portapapeles: ' + error)
+      })
+  }
+</script>

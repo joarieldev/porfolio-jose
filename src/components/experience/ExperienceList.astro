@@ -1,0 +1,32 @@
+---
+import Experience from './Experience.astro'
+
+const experience = [
+  {
+    date: 'Junio 2024',
+    title: 'Desarrollador Web FullStack',
+    company: 'Nodect',
+    description:
+      'Responsable en la creacion de interfaces de la plataforma y la implementacion de funcionalidades Frontend y Backend.',
+    link: 'https://nodect.com/',
+  },
+  {
+    date: 'Octubre 2023',
+    title: 'Desarrollador Web FullStack',
+    company: 'Pasantia, Hobie',
+    description:
+      'Responsable de un 60% en Backend. Mejorando la validacion de datos. Frontend correccion en la UI 15%.',
+    link: '/GoEvent.pdf',
+  },
+]
+---
+
+<ol class="relative border-s border-[#bb3e03] dark:border-[#005f73]">
+  {
+    experience.map((experience) => (
+      <li class="mb-10 ms-4">
+        <Experience {...experience} />
+      </li>
+    ))
+  }
+</ol>

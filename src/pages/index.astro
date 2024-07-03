@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ExperienceList from '@/components/experience/ExperienceList.astro'
+import Hero from '@/components/Hero.astro'
+import ProjectList from '@/components/project/ProjectList.astro'
+import Briefcase from '@/components/icons/Briefcase.astro'
+import Code from '@/components/icons/Code.astro'
+import User from '@/components/icons/User.astro'
+import About from '@/components/About.astro'
+---
+
+<Layout
+  title="Porfolio Jose - Desarrollador Web."
+  description="Contrata a Jose para crear tu aplicacion web o movil"
+>
+  <main class="flex flex-col items-center p-2">
+    <section id="hero" class="max-w-screen-md pt-40 pb-20">
+      <Hero />
+    </section>
+    <section id="experience" class="max-w-screen-md pt-14">
+      <h2
+        class="inline-flex items-center gap-2 text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6 max-sm:text-xl"
+      >
+        <Briefcase class="size-7 max-sm:size-5" /> Experiencia
+      </h2>
+      <ExperienceList />
+    </section>
+    <section id="projects" class="max-w-screen-md pt-14">
+      <h2
+        class="inline-flex items-center gap-2 text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6 max-sm:text-xl"
+      >
+        <Code class="size-7 max-sm:size-5" /> Proyectos
+      </h2>
+      <ProjectList />
+    </section>
+    <section id="about" class="max-w-screen-md py-14">
+      <h2
+        class="inline-flex items-center gap-2 text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6 max-sm:text-xl"
+      >
+        <User class="size-7 max-sm:size-5" /> Sobre mi
+      </h2>
+      <About />
+    </section>
+  </main>
+</Layout>
