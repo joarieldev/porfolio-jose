@@ -25,6 +25,11 @@ const tags = {
     class:
       'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-blue-600/15 dark:bg-blue-600/40 px-2 py-1 rounded-full',
     icon: '/MaterialUI.svg',
+  },
+  Astro: {
+    name: 'Astro',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-stone-600/15 dark:bg-stone-600/40 px-2 py-1 rounded-full',
+    icon: '/Astro.svg'
   }
 }
 const projects = [
@@ -46,9 +51,18 @@ const projects = [
     image: '/projects/order-up.webp',
     tags: [tags.Nextjs, tags.TailwindCss, tags.MaterialUI],
   },
+  {
+    title: 'TextoVoz',
+    description:
+      'Convierte texto escrito en audio con una interfaz fácil de usar, cuenta con opciones de personalización y soporta múltiples idiomas.',
+    link: 'https://text-to-speech-8r3.pages.dev/',
+    github: 'https://github.com/joarieldev/text-to-speech',
+    image: '/projects/textovoz.webp',
+    tags: [tags.Astro, tags.TailwindCss],
+  }
 ]
 ---
 
-<article class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+<article class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg">
   {projects.map((project) => <Project {...project} />)}
 </article>
