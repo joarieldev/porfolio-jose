@@ -1,5 +1,5 @@
 ---
-const skills = [
+const mainSkills = [
   {
     name: 'Javascript',
     description: 'javascript logo',
@@ -15,25 +15,35 @@ const skills = [
     description: 'css logo',
     image: '/CSS.svg',
   },
+  
+  {
+    name: 'React',
+    description: 'react logo',
+    image: '/React.svg',
+  },
+  
+  {
+    name: 'Git',
+    description: 'git logo',
+    image: '/Git.svg',
+  },
+  
+]
+const knowledge = [
   {
     name: 'TypeScript',
     description: 'typescript logo',
     image: '/TypeScript.svg',
   },
   {
-    name: 'Node.js',
-    description: 'nodejs logo',
-    image: '/Nodejs.svg',
-  },
-  {
-    name: 'React',
-    description: 'react logo',
-    image: '/React.svg',
-  },
-  {
     name: 'Next.js',
     description: 'nextjs logo',
     image: '/Nextjs.svg',
+  },
+  {
+    name: 'Node.js',
+    description: 'nodejs logo',
+    image: '/Nodejs.svg',
   },
   {
     name: 'TailwindCSS',
@@ -44,11 +54,6 @@ const skills = [
     name: 'Bootstrap',
     description: 'bootstrap logo',
     image: '/Bootstrap.svg',
-  },
-  {
-    name: 'Git',
-    description: 'git logo',
-    image: '/Git.svg',
   },
   {
     name: 'Express.js',
@@ -66,6 +71,11 @@ const skills = [
     image: '/MySQL.svg',
   },
   {
+    name: 'Docker',
+    description: 'docker logo',
+    image: '/Docker.svg',
+  },
+  {
     name: 'Firebase',
     description: 'firebase logo',
     image: '/Firebase.svg',
@@ -79,24 +89,19 @@ const skills = [
     name: 'Java',
     description: 'java logo',
     image: '/Java.svg',
-  },
-  {
-    name: 'Docker',
-    description: 'docker logo',
-    image: '/Docker.svg',
   }
 ]
 ---
-<article class="flex flex-col-reverse items-center sm:flex-row gap-2">
+<article class="flex flex-col-reverse items-center sm:flex-row gap-4">
   <div class="text-gray-800 dark:text-gray-200 text-base max-sm:text-sm">
     <p class="mb-3">
-      Me llamo José Ariel Martínez. Desde que empecé a programar en la universidad, siempre he tenido curiosidad por descubrir las posibilidades que ofrece la programación y cómo puedo utilizarla para dar funcionalidad a las cosas.
+      Me llamo José Ariel Martínez. Soy un desarrollador Fullstack con una fuerte inclinación hacia el <strong class="text-[#0a9396] dark:text-[#ca6702]">Frontend</strong>. Siempre he estado motivado por explorar las infinitas posibilidades del desarrollo y cómo hacer que las ideas cobren vida de manera funcional.
     </p>
     <p class="mb-3">
-      Como desarrollador Fullstack, mi objetivo es especializarme en Frontend y seguir mejorando mis habilidades en esta área. Me encanta trabajar en el diseño y la interfaz de usuario, creando experiencias atractivas y fáciles de usar.
+      Mi enfoque principal es <strong class="text-[#0a9396] dark:text-[#ca6702]">crear interfaces atractivas y fáciles de usar</strong>, con el objetivo de seguir especializándome en el diseño y la experiencia de usuario.
     </p>
   </div>
-  <div class="p-2 bg-[#001219]/20 border-gray-600 border rounded-xl w-32 sm:w-80">
+  <div class="p-1 bg-[#001219]/20 border-gray-600 border rounded-xl w-28 sm:w-96">
     <img
       class="w-full h-full object-cover rounded-lg"
       src="/me2.webp"
@@ -105,15 +110,30 @@ const skills = [
   </div>
 </article>
 <article class="flex flex-col items-center mt-7">
-  <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 my-3 max-sm:text-xl">
-    Skills
+  <h3 class="text-xl text-gray-800 dark:text-gray-200 my-2 max-sm:text-lg">
+    Habilidades principales
+  </h3>
+  <div class="flex flex-wrap justify-center gap-4 p-2 w-full sm:max-w-screen-sm max-sm:gap-2">
+    {
+      mainSkills.map((item) => (
+        <div class="flex flex-col gap-1 items-center p-1 hover:scale-110 transition cursor-default">
+          <img src={item.image} alt={item.description} class="size-6 max-sm:size-5" />
+          <h4 class="text-gray-900 dark:text-gray-100 text-base font-light max-sm:text-sm">
+            {item.name}
+          </h4>
+        </div>
+      ))
+    }
+  </div>
+  <h2 class="text-xl text-gray-800 dark:text-gray-200 my-2 max-sm:text-lg">
+    Conocimientos en
   </h2>
   <div class="flex flex-wrap justify-center gap-4 p-2 w-full sm:max-w-screen-sm max-sm:gap-2">
     {
-      skills.map((item) => (
-        <div class="flex flex-col gap-1 items-center p-2 hover:scale-110 transition cursor-default">
+      knowledge.map((item) => (
+        <div class="flex flex-col gap-1 items-center p-1 hover:scale-110 transition cursor-default">
           <img src={item.image} alt={item.description} class="size-6 max-sm:size-5" />
-          <h4 class="text-gray-900 dark:text-gray-100 text-base font-normal max-sm:text-sm">
+          <h4 class="text-gray-900 dark:text-gray-100 text-base font-light max-sm:text-sm">
             {item.name}
           </h4>
         </div>
