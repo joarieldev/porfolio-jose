@@ -40,6 +40,31 @@ const tags = {
     name: 'TanStack Query',
     class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-orange-600/15 dark:bg-orange-600/40 px-2 py-1 rounded-full',
     icon: '/TanStack.webp'
+  },
+  Expressjs:{
+    name: 'Expressjs',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-zinc-600/15 dark:bg-zinc-600/40 px-2 py-1 rounded-full',
+    icon: '/Expressjs.svg'
+  },
+  Docker:{
+    name: 'Docker',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-blue-600/15 dark:bg-blue-600/40 px-2 py-1 rounded-full',
+    icon: '/Docker.svg'
+  },
+  TypeORM: {
+    name: 'TypeORM',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-red-600/15 dark:bg-red-600/40 px-2 py-1 rounded-full',
+    icon: '/TypeORM.svg'
+  },
+  MySQL: {
+    name: 'MySQL',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-teal-600/15 dark:bg-teal-600/20 px-2 py-1 rounded-full',
+    icon: '/MySQL.svg'
+  },
+  Swagger:{
+    name: 'Swagger',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-green-600/15 dark:bg-green-600/40 px-2 py-1 rounded-full',
+    icon: '/Swagger.svg'
   }
 }
 const projects = [
@@ -69,6 +94,13 @@ const projects = [
     github: 'https://github.com/joarieldev/text-to-speech',
     image: '/projects/textovoz.webp',
     tags: [tags.Astro, tags.TailwindCss],
+  },
+  {
+    title: 'API GestiónVentas',
+    description: 'Backend para gestionar ventas de productos, con control de stock, creada en Node.js.',
+    github: 'https://github.com/joarieldev/api-sales-management',
+    image: '/projects/api-sales-management.webp',
+    tags: [tags.Expressjs, tags.Docker, tags.TypeORM, tags.MySQL, tags.Swagger],
   }
 ]
 ---
