@@ -65,17 +65,53 @@ const tags = {
     name: 'Swagger',
     class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-green-600/15 dark:bg-green-600/40 px-2 py-1 rounded-full',
     icon: '/Swagger.svg'
+  },
+  HTML: {
+    name: 'HTML',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-amber-600/15 dark:bg-amber-600/40 px-2 py-1 rounded-full',
+    icon: '/HTML.svg'
+  },
+  CSS: {
+    name: 'CSS',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-emerald-600/15 dark:bg-emerald-600/40 px-2 py-1 rounded-full',
+    icon: '/CSS.svg'
+  },
+  JavaScript: {
+    name: 'JavaScript',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-yellow-600/15 dark:bg-yellow-600/40 px-2 py-1 rounded-full',
+    icon: '/JavaScript.svg'
+  },
+  Cloudinary: {
+    name: 'Cloudinary',
+    class: 'inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white bg-blue-600/15 dark:bg-blue-600/40 px-2 py-1 rounded-full',
+    icon: '/Cloudinary.svg'
   }
 }
 const projects = [
   {
-    title: 'Adoptar Mascotas',
+    title: 'Feria de las Plantas',
+    description: 'Pagina web no oficial para APPOJUY feria de las plantas. Creada con vanilla js.',
+    link: 'https://plant-fair.netlify.app/',
+    github: 'https://github.com/joarieldev/plant-fair',
+    image: '/projects/plant-fair.webp',
+    tags: [tags.HTML, tags.CSS, tags.JavaScript],
+  },
+  {
+    title: 'Genera un Halloween',
+    description: 'Edita tus fotos para generar un halloween con tus amigos. Proyecto creado para la hackathon de Midudev y Cloudinary.',
+    link: 'https://generate-halloween-img.vercel.app/',
+    github: 'https://github.com/joarieldev/generate-halloween-img',
+    image: '/projects/generate-halloween.webp',
+    tags: [tags.Nextjs, tags.Cloudinary, tags.TailwindCss]
+  },
+  {
+    title: 'TextoVoz',
     description:
-      'Sitio Web para la adopciòn de mascotas. Mas de 5 especies para adoptar. Creada desde cero con React y Tailwind CSS.',
-    link: 'https://adoptar-mascota.vercel.app/',
-    github: 'https://github.com/joarieldev/AdoptarMascota',
-    image: '/projects/adoptar-mascota.webp',
-    tags: [tags.React, tags.TailwindCss, tags.TanStack],
+      'Convierte texto escrito en audio con una interfaz fácil de usar, cuenta con opciones de personalización y soporta múltiples idiomas.',
+    link: 'https://text-to-speech-8r3.pages.dev/',
+    github: 'https://github.com/joarieldev/text-to-speech',
+    image: '/projects/textovoz.webp',
+    tags: [tags.Astro, tags.TailwindCss],
   },
   {
     title: 'Order Up',
@@ -87,13 +123,13 @@ const projects = [
     tags: [tags.Nextjs, tags.TailwindCss, tags.MaterialUI, tags.Authjs],
   },
   {
-    title: 'TextoVoz',
+    title: 'Adoptar Mascotas',
     description:
-      'Convierte texto escrito en audio con una interfaz fácil de usar, cuenta con opciones de personalización y soporta múltiples idiomas.',
-    link: 'https://text-to-speech-8r3.pages.dev/',
-    github: 'https://github.com/joarieldev/text-to-speech',
-    image: '/projects/textovoz.webp',
-    tags: [tags.Astro, tags.TailwindCss],
+      'Sitio Web para la adopciòn de mascotas. Mas de 5 especies para adoptar. Creada desde cero con React y Tailwind CSS.',
+    link: 'https://adoptar-mascota.vercel.app/',
+    github: 'https://github.com/joarieldev/AdoptarMascota',
+    image: '/projects/adoptar-mascota.webp',
+    tags: [tags.React, tags.TailwindCss, tags.TanStack],
   },
   {
     title: 'API GestiónVentas',
