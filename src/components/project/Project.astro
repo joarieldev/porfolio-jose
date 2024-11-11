@@ -14,12 +14,14 @@ interface Props {
 const { title, description, link, github, image, tags } = Astro.props
 ---
 
-<div class="w-full">
-  <img
-    class="rounded-lg sm:hover:scale-105 transition"
-    src={image}
-    alt={image}
-  />
+<div class="w-full group">
+  <div class="relative rounded-lg overflow-hidden">
+    <img
+      class="sm:group-hover:scale-105 transition duration-500 ease-in-out"
+      src={image}
+      alt={image}
+    />
+  </div>
   <div class="p-4 max-sm:p-2">
     <h3
       class="mb-2 text-2xl font-bold text-gray-800 dark:text-gray-200 max-sm:text-xl"
