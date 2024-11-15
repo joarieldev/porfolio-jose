@@ -3,13 +3,13 @@ import Moon from './icons/Moon.astro'
 import Sun from './icons/Sun.astro'
 ---
 
-<button onclick="changeTheme()" class="mx-2 hover:scale-110 transition">
-  <Sun id="sun" class="hidden size-6" />
-  <Moon id="moon" class="hidden size-6" />
+<button onclick="changeTheme()" class="mx-2 hover:scale-110 transition size-6">
+  <Sun id="sun" class="hidden" />
+  <Moon id="moon" class="hidden" />
 </button>
 
 <script is:inline>
-    const changeTheme = () => {
+  const changeTheme = () => {
     const theme = getTheme()
     if (theme === 'dark') updateTheme('light')
     if (theme === 'light') updateTheme('dark') 
@@ -27,13 +27,13 @@ import Sun from './icons/Sun.astro'
     localStorage.setItem('theme', theme)
     if(theme === 'dark') {
       document.documentElement.classList.add('dark')
-      document.getElementById('sun').classList.add('hidden')
-      document.getElementById('moon').classList.remove('hidden')
+      document.getElementById('sun').classList.remove('hidden')
+      document.getElementById('moon').classList.add('hidden')
     }
     if(theme === 'light') { 
       document.documentElement.classList.remove('dark')
-      document.getElementById('moon').classList.add('hidden')
-      document.getElementById('sun').classList.remove('hidden')
+      document.getElementById('moon').classList.remove('hidden')
+      document.getElementById('sun').classList.add('hidden')
     }
   }
   document.addEventListener('DOMContentLoaded', () => {
