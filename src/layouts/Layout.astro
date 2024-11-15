@@ -40,10 +40,12 @@ const { title, description } = Astro.props
     scrollbar-width: thin;
     scrollbar-color: #717171 #42424273;
   }
+  #polygon {
+    clip-path: polygon(21.32% 54.14%, 87.36% 37.65%, 27.95% 10.22%, 88.09% 99.54%, 60.22% 61.00%, 61.07% 54.13%, 79.23% 54.25%, 24.43% 3.61%, 2.40% 41.28%, 89.56% 20.92%, 78.91% 11.92%, 89.82% 57.05%, 60.57% 41.73%, 31.84% 30.54%, 22.56% 43.92%, 27.47% 48.21%);
+  }
 </style>
 <script is:inline>
   const polygon = document.getElementById('polygon')
-  polygon.style.clipPath = generarClipPath();
   function generarClipPath() {
     const points = Array.from({ length: 16 }, () => {
       const x = (Math.random() * 100).toFixed(2);
