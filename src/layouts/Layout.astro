@@ -22,16 +22,10 @@ const { title, description } = Astro.props
     <title>{title}</title>
   </head>
   <body class="bg-gray-200 dark:bg-[#001219]">
-    <div class="absolute z-[-1] h-[700px] w-full overflow-hidden">
-      <div class="relative h-full w-full">
-        <div
-          class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,95,115,.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_farthest-side,rgba(233,216,166,.15),rgba(255,255,255,0))]"
-        >
-        </div>
-        <div
-          class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,95,115,.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_farthest-side,rgba(233,216,166,.15),rgba(255,255,255,0))]"
-        >
-        </div>
+    <div class="absolute z-[-1] h-[700px] w-full flex justify-center">
+      <div class="relative h-full w-full max-w-screen-xl py-24 ransform-gpu blur-3xl">
+        <div id="polygon" class="h-full w-full bg-gradient-to-r from-[rgba(0,96,115)]  to-white/10 dark:bg-gradient-to-r dark:from-[rgba(233,216,166,.8)] dark:to-white/10  opacity-70 lg:opacity-40 transition-all duration-[3s]"
+        ></div>
       </div>
     </div>
     <Header />
@@ -47,3 +41,18 @@ const { title, description } = Astro.props
     scrollbar-color: #717171 #42424273;
   }
 </style>
+<script is:inline>
+  const polygon = document.getElementById('polygon')
+  polygon.style.clipPath = generarClipPath();
+  function generarClipPath() {
+    const points = Array.from({ length: 16 }, () => {
+      const x = (Math.random() * 100).toFixed(2);
+      const y = (Math.random() * 100).toFixed(2);
+      return `${x}% ${y}%`;
+    });
+    return `polygon(${points.join(", ")})`;
+  }
+  setInterval(() => {
+    polygon.style.clipPath = generarClipPath();
+  }, 3000);
+</script>
