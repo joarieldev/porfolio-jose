@@ -14,15 +14,17 @@
     </strong> de Jujuy, Argentina.
   </p>
   <div class="flex flex-wrap justify-center gap-2 mt-4 md:mt-6">
-    <a
-      href="mailto:joariel17@gmail.com"
-      id="gmail"
-      onclick="copyMail()"
-      class="flex gap-2 items-center py-2 px-4 text-sm font-semibold rounded-lg border bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-[#C5221F] hover:bg-[#C5221F]/20 dark:hover:bg-[#C5221F]/30 transition max-sm:text-xs max-sm:font-medium w-[92px] sm:w-[98px]"
-    >
-      <img src="/Gmail.svg" alt="linkedin logo" class="size-4" />
-      Gmail
-    </a>
+    <div id="btn-gmail" class="p-[1px] bg-[conic-gradient(from_45deg,_#FBBC04,_#34A853,_#4387f4ee,_#EA4335,_#FBBC04)] rounded-lg">
+      <a
+        href="mailto:joariel17@gmail.com"
+        id="gmail"
+        onclick="copyMail()"
+        class="flex gap-2 items-center py-2 px-4 text-sm font-semibold rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-[conic-gradient(from_45deg,_rgba(251,189,4,0.45),_rgba(52,168,83,0.45),_rgba(67,135,244,0.45),_rgba(234,68,53,0.45),_rgba(251,189,4,0.45))] dark:hover:bg-[conic-gradient(from_45deg,_rgba(251,189,4,0.25),_rgba(52,168,83,0.25),_rgba(67,135,244,0.25),_rgba(234,68,53,0.25),_rgba(251,189,4,0.25))] transition max-sm:text-xs max-sm:font-medium w-[92px] sm:w-[98px] "
+      >
+        <img src="/Gmail.svg" alt="linkedin logo" class="size-4" />
+        Gmail
+      </a>
+    </div>
     <a
       href="https://www.linkedin.com/in/joarieldev/"
       target="_blank"
@@ -48,21 +50,26 @@
     const mail = document.getElementById('gmail')
     const mailCss = mail.style.cssText
     const mailElement = document.getElementById('gmail').innerHTML
-
-    mail.classList.add('duration-500')
-
+    const btn_mail = document.getElementById('btn-gmail')
+    const btn_mailCss = btn_mail.style.cssText
+    
     await navigator.clipboard
-      .writeText(mailto)
-      .then(function () {
-        mail.style.backgroundColor = 'rgba(47, 158, 68, .30)'
-        mail.style.borderColor = 'rgba(47, 158, 68, 1)'
+    .writeText(mailto)
+    .then(function () {
+        mail.classList.add('duration-500')
+        mail.style.pointerEvents = 'none'
+        mail.classList.remove('bg-gray-200', 'dark:bg-gray-800')
+        mail.classList.add('bg-[#A5CCB5]', 'dark:bg-[#1B482E]')
         mail.textContent = 'Copiado!'
+        btn_mail.style.background = 'rgba(47, 158, 68, 1)'
+        
         setTimeout(() => {
+          mail.classList.remove('bg-[#A5CCB5]', 'dark:bg-[#1B482E]')
+          mail.classList.add('bg-gray-200', 'dark:bg-gray-800')
           mail.style.cssText = mailCss
           document.getElementById('gmail').innerHTML = mailElement
-          setTimeout(() => {
-            mail.classList.remove('duration-500')
-          }, 1000)
+          btn_mail.style.cssText = btn_mailCss
+          mail.classList.remove('duration-500')
         }, 1500)
       })
       .catch(function (error) {
