@@ -13,11 +13,11 @@ import About from '@/components/About.astro'
   title="Porfolio Jose - Desarrollador Web."
   description="Contrata a Jose para crear tu aplicacion web o movil"
 >
-  <main class="flex flex-col items-center p-2 max-md:px-4">
-    <section id="hero" class="max-w-screen-md pt-40 pb-20">
+  <main class="flex flex-col items-center p-2 max-lg:px-4">
+    <section id="hero" class="max-w-screen-lg w-full pt-40 pb-20 lg:px-28">
       <Hero />
     </section>
-    <section id="experience" class="max-w-screen-md pt-14">
+    <section id="experience" class="max-w-screen-lg pt-14 lg:px-28">
       <h2
         class="inline-flex items-center gap-2 text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6 max-sm:text-xl"
       >
@@ -25,7 +25,7 @@ import About from '@/components/About.astro'
       </h2>
       <ExperienceList />
     </section>
-    <section id="projects" class="max-w-screen-md pt-14">
+    <section id="projects" class="max-w-screen-lg py-14 lg:px-28">
       <h2
         class="inline-flex items-center gap-2 text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6 max-sm:text-xl"
       >
@@ -33,7 +33,7 @@ import About from '@/components/About.astro'
       </h2>
       <ProjectList />
     </section>
-    <section id="about" class="max-w-screen-md py-14">
+    <section id="about" class="max-w-screen-lg pb-14 lg:px-28">
       <h2
         class="inline-flex items-center gap-2 text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6 max-sm:text-xl"
       >
@@ -43,3 +43,29 @@ import About from '@/components/About.astro'
     </section>
   </main>
 </Layout>
+
+<script is:inline>
+  const section = document.getElementById("projects")
+  const div = document.querySelectorAll(".myProjects")
+
+  section.addEventListener("mousemove", function (e) {
+    const x = e.clientX
+    const y = e.clientY
+    div.forEach((el) => {
+      const rect = el.getBoundingClientRect()
+      const span = el.querySelector("span")
+      span.style.opacity = 1
+      if (globalTheme === "dark")
+        span.style.background = `radial-gradient(700px circle at ${x - rect.left}px ${y - rect.top}px, #0a9396, transparent 40%)`
+      if (globalTheme === "light")
+        span.style.background = `radial-gradient(700px circle at ${x - rect.left}px ${y - rect.top}px, rgb(202 102 2 / 0.55), transparent 40%)`
+    })
+  })
+
+  section.addEventListener("mouseleave", function () {
+    div.forEach((el) => {
+      const span = el.querySelector("span")
+      span.style.opacity = 0
+    })
+  })
+</script>

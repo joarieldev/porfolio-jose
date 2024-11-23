@@ -46,7 +46,7 @@ const navItems = [
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
-    @apply bg-[#e5e7eba1] dark:bg-[#001219a1];
+    @apply bg-[#e5e7eba1] dark:bg-[#001219a1] ring-gray-600/15 dark:ring-gray-50/15;
   }
 
   @keyframes nav-shadown {
@@ -54,7 +54,7 @@ const navItems = [
       @apply bg-transparent;
     }
     to {
-      @apply shadow-lg ring-1 backdrop-blur ring-gray-600/10;
+      @apply shadow-lg ring-1 backdrop-blur ;
     }
   }
 </style> 

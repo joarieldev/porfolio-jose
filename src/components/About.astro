@@ -36,6 +36,7 @@ const mainSkills = [
     name: 'Next.js',
     description: 'nextjs logo',
     image: '/Nextjs.svg',
+    color: 'gray',
   }
 ]
 
@@ -69,6 +70,7 @@ const knowledge = [
     name: 'MySQL',
     description: 'mysql logo',
     image: '/MySQL.svg',
+    color: '#3d86a183',
   },
   {
     name: 'Docker',
@@ -89,6 +91,7 @@ const knowledge = [
     name: 'Java',
     description: 'java logo',
     image: '/Java.svg',
+    color: '#f9a4427e',
   }
 ]
 ---
@@ -116,9 +119,9 @@ const knowledge = [
   <div class="flex flex-wrap justify-center gap-4 p-2 w-full sm:max-w-screen-sm max-sm:gap-2">
     {
       mainSkills.map((item) => (
-        <div class="flex flex-col gap-1 items-center p-1 group hover:scale-110 transition cursor-default">
+        <div class="flex flex-col gap-1 items-center p-1 hover:scale-110 transition duration-300 cursor-default">
           <div class="flex relative">
-            <span style={{backgroundImage: `url(${item.image})`}} class="bg-cover bg-center blur-md saturate-200 scale-125 absolute inset-0 z-[-1] opacity-0 group-hover:opacity-100 transition" />
+            <span style={{backgroundImage: `url(${item.image})`, background: `${item.color}`}} class="bg-cover bg-center blur-md saturate-50 dark:saturate-200 dark:scale-125 absolute inset-0 z-[-1]" />
             <img src={item.image} alt={item.description} class="size-6 max-sm:size-5" />
           </div>
           <h4 class="text-gray-900 dark:text-gray-100 text-base font-light max-sm:text-sm">
@@ -134,9 +137,9 @@ const knowledge = [
   <div class="flex flex-wrap justify-center gap-4 p-2 w-full sm:max-w-screen-sm max-sm:gap-2">
     {
       knowledge.map((item) => (
-        <div class="flex flex-col gap-1 items-center p-1 group hover:scale-110 transition cursor-default">
+        <div class="flex flex-col gap-1 items-center p-1 hover:scale-110 transition duration-300 cursor-default">
           <div class="flex relative">
-            <span style={{backgroundImage: `url(${item.image})`}} class="bg-cover bg-center blur-md saturate-200 scale-125 absolute inset-0 z-[-1] opacity-0 group-hover:opacity-100 transition" />
+            <span style={{backgroundImage: `url(${item.image})`, background: `${item.color}`}} class="bg-cover bg-center blur-md saturate-50 dark:saturate-200 dark:scale-125 absolute inset-0 z-[-1]" />
             <img src={item.image} alt={item.description} class="size-6 max-sm:size-5" />
           </div>
           <h4 class="text-gray-900 dark:text-gray-100 text-base font-light max-sm:text-sm">

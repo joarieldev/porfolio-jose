@@ -9,10 +9,17 @@ import Sun from './icons/Sun.astro'
 </button>
 
 <script is:inline>
+  let globalTheme = 'dark'
   const changeTheme = () => {
     const theme = getTheme()
-    if (theme === 'dark') updateTheme('light')
-    if (theme === 'light') updateTheme('dark') 
+    if (theme === 'dark') {
+      updateTheme('light')
+      globalTheme = 'light'
+    }
+    if (theme === 'light') {
+      updateTheme('dark') 
+      globalTheme = 'dark'
+    }
   }
   const getTheme = () => {
     const themeStorage = localStorage.getItem('theme')
@@ -39,5 +46,6 @@ import Sun from './icons/Sun.astro'
   document.addEventListener('DOMContentLoaded', () => {
     const theme = getTheme()
     updateTheme(theme)
+    globalTheme = theme
   })
 </script>
