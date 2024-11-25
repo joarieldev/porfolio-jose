@@ -97,11 +97,11 @@ const knowledge = [
 ---
 <article class="flex flex-col-reverse items-center sm:flex-row gap-4">
   <div class="text-base max-sm:text-sm">
-    <p class="mb-3 text-gray-800 dark:text-gray-200 ">
-      Me llamo José Ariel Martínez. Soy un desarrollador "Fullstack" con una fuerte inclinación hacia el <strong class="text-[#0a9396] dark:text-[#ca6702]">Frontend</strong>. Siempre he estado motivado por explorar las infinitas posibilidades del desarrollo y cómo hacer que las ideas cobren vida de manera funcional.
+    <p class="mb-3 text-gray-800 dark:text-gray-200 text-balance">
+      Me llamo José Ariel Martínez soy desarrollador Frontend, casi <strong class="text-[#0a9396] dark:text-[#ca6702]">siempre motivado por explorar las infinatas posibilidades del desarrollo web</strong> y cómo hacer que las ideas cobren vida, tambien cuento con conocimientos en <strong class="text-[#0a9396] dark:text-[#ca6702]">Backend</strong>.
     </p>
     <p class="mb-3 text-gray-800 dark:text-gray-200 ">
-      Mi enfoque principal es <strong class="text-[#0a9396] dark:text-[#ca6702]">crear interfaces atractivas y fáciles de usar</strong>, con el objetivo de seguir especializándome en el diseño y aplicar las mejores prácticas en el desarrollo web.
+      Mi objetivo es seguir especializándome en <strong class="text-[#0a9396] dark:text-[#ca6702]">crear interfaces atractivas y fáciles de usar</strong> y aplicar las mejores prácticas en el desarrollo web.
     </p>
   </div>
   <div class="p-1 bg-[#001219]/20 border-gray-600 border rounded-xl w-28 sm:w-96">
@@ -121,7 +121,7 @@ const knowledge = [
       mainSkills.map((item) => (
         <div class="flex flex-col gap-1 items-center p-1 hover:scale-110 transition duration-300 cursor-default">
           <div class="flex relative">
-            <span style={{backgroundImage: `url(${item.image})`, background: `${item.color}`}} class="bg-cover bg-center blur-md saturate-50 dark:saturate-200 dark:scale-125 absolute inset-0 z-[-1]" />
+            <span style={{backgroundImage: `url(${item.image})`, background: `${item.color}`}} class="bg-cover bg-center blur-md saturate-50 dark:saturate-200 dark:scale-125 absolute inset-0 z-[-1] blink" />
             <img src={item.image} alt={item.description} class="size-6 max-sm:size-5" />
           </div>
           <h4 class="text-gray-900 dark:text-gray-100 text-base font-light max-sm:text-sm">
@@ -139,7 +139,7 @@ const knowledge = [
       knowledge.map((item) => (
         <div class="flex flex-col gap-1 items-center p-1 hover:scale-110 transition duration-300 cursor-default">
           <div class="flex relative">
-            <span style={{backgroundImage: `url(${item.image})`, background: `${item.color}`}} class="bg-cover bg-center blur-md saturate-50 dark:saturate-200 dark:scale-125 absolute inset-0 z-[-1]" />
+            <span style={{backgroundImage: `url(${item.image})`, background: `${item.color}`}} class="bg-cover bg-center blur-md saturate-50 dark:saturate-200 dark:scale-125 absolute inset-0 z-[-1] blink" />
             <img src={item.image} alt={item.description} class="size-6 max-sm:size-5" />
           </div>
           <h4 class="text-gray-900 dark:text-gray-100 text-base font-light max-sm:text-sm">
@@ -150,3 +150,57 @@ const knowledge = [
     }
   </div>
 </article>
+
+<style>
+  .anim-blink-0 {
+    animation: blink-0 5s infinite;
+  }
+  @keyframes blink-0 {
+    55% { opacity: 1;}
+    0%,19%,21%,23%,25%,54%,56%,100% { opacity: 0;}
+  }
+  .anim-blink-1 {
+    animation: blink-1 3s infinite;
+  }
+  @keyframes blink-1 {
+    20%,24% { opacity: 0;}
+    0%,19%,21%,23%,25%,54%,56%,100% { opacity: 1;}
+  }
+  .anim-blink-2 {
+    animation: blink-2 5s infinite;
+  }
+  @keyframes blink-2 {
+    20%,24%,55% { opacity: 0;}
+    0%,19%,21%,23%,25%,54%,56%,100% { opacity: 1;}
+  }
+</style>
+
+<script>
+  const blinks = document.querySelectorAll(".blink")
+
+  function generarBlink() {
+    const select = Math.floor(Math.random() * blinks.length)
+    const selectBlink = Math.floor(Math.random() * 3)
+    const element = blinks[select];
+
+    if (element.classList.contains("anim-blink-0") || 
+        element.classList.contains("anim-blink-1") || 
+        element.classList.contains("anim-blink-2")) {
+      return
+    }
+
+    element.classList.add(`anim-blink-${selectBlink}`);
+    console.log(`blink-${selectBlink}`, select)
+    setTimeout(()=>{
+        element.classList.remove(`anim-blink-${selectBlink}`)
+      },5000)    
+    }
+
+  setInterval(() => {
+    const repetir = Math.ceil(Math.random() * blinks.length / 2)
+    console.log(repetir)
+    for (let i = 0; i < repetir; i++) {
+      generarBlink()
+    }
+  }, 6000)
+</script>
