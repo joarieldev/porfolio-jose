@@ -10,6 +10,7 @@ import Sun from './icons/Sun.astro'
 
 <script is:inline>
   let globalTheme = 'dark'
+
   const changeTheme = () => {
     const theme = getTheme()
     if (theme === 'dark') {
@@ -30,7 +31,20 @@ import Sun from './icons/Sun.astro'
       ? 'dark'
       : 'light'
   }
+  const trasiton = () => {
+    const style = document.createElement('style')
+    style.innerHTML = `
+      * {
+        transition: all 500ms ease;
+      }
+    `
+    document.head.appendChild(style)
+    setTimeout(() => {
+      document.head.removeChild(style)
+    }, 1500);
+  }
   const updateTheme = (theme) => {
+    trasiton()
     localStorage.setItem('theme', theme)
     if(theme === 'dark') {
       document.documentElement.classList.add('dark')

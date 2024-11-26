@@ -97,14 +97,14 @@ const knowledge = [
 ---
 <article class="flex flex-col-reverse items-center sm:flex-row gap-4">
   <div class="text-base max-sm:text-sm">
-    <p class="mb-3 text-gray-800 dark:text-gray-200 text-balance">
+    <p class="mb-3 text-gray-800 dark:text-gray-200 text-pretty md:text-balance">
       Me llamo José Ariel Martínez soy desarrollador Frontend, casi <strong class="text-[#0a9396] dark:text-[#ca6702]">siempre motivado por explorar las infinatas posibilidades del desarrollo web</strong> y cómo hacer que las ideas cobren vida, tambien cuento con conocimientos en <strong class="text-[#0a9396] dark:text-[#ca6702]">Backend</strong>.
     </p>
-    <p class="mb-3 text-gray-800 dark:text-gray-200 ">
+    <p class="mb-3 text-gray-800 dark:text-gray-200 text-pretty md:text-balance">
       Mi objetivo es seguir especializándome en <strong class="text-[#0a9396] dark:text-[#ca6702]">crear interfaces atractivas y fáciles de usar</strong> y aplicar las mejores prácticas en el desarrollo web.
     </p>
   </div>
-  <div class="p-1 bg-[#001219]/20 border-gray-600 border rounded-xl w-28 sm:w-96">
+  <div class="p-1 bg-[#001219]/20 border-gray-600 border rounded-xl w-28 sm:w-96 aspect-square">
     <img
       class="w-full h-full object-cover rounded-lg"
       src="/me2.webp"
@@ -190,7 +190,6 @@ const knowledge = [
     }
 
     element.classList.add(`anim-blink-${selectBlink}`);
-    console.log(`blink-${selectBlink}`, select)
     setTimeout(()=>{
         element.classList.remove(`anim-blink-${selectBlink}`)
       },5000)    
@@ -198,7 +197,6 @@ const knowledge = [
 
   setInterval(() => {
     const repetir = Math.ceil(Math.random() * blinks.length / 2)
-    console.log(repetir)
     for (let i = 0; i < repetir; i++) {
       generarBlink()
     }

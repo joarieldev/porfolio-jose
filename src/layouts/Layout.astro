@@ -21,27 +21,24 @@ const { title, description } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-gray-200 dark:bg-[#001219]">
-    <div class="absolute z-[-1] h-[700px] w-full flex justify-center">
-      <div class="relative h-full w-full max-w-screen-xl py-24 ransform-gpu blur-3xl">
-        <div id="polygon" class="h-full w-full bg-gradient-to-r from-[rgba(0,96,115)]  to-white/10 dark:bg-gradient-to-r dark:from-[rgba(233,216,166,.9)] dark:to-white/10  opacity-70 lg:opacity-40 transition-all duration-[3s]"
-        ></div>
+  <body class="bg-gray-200 dark:bg-[#001219] min-w-[320px]">
+      <div class="absolute z-[-1] h-[720px] w-full flex justify-center min-w-[320px]">
+        <div class="relative h-full w-full max-w-screen-xl py-24 ransform-gpu blur-3xl">
+          <div id="polygon" class="h-full w-full bg-gradient-to-r from-[rgba(0,96,115)]  to-white/10 dark:bg-gradient-to-r dark:from-[rgba(233,216,166,.9)] dark:to-white/10  opacity-70 lg:opacity-40 transition-all duration-[3s]"
+          ></div>
+        </div>
       </div>
-    </div>
-    <div class="absolute z-[-2] h-full w-full overflow-hidden">
-      <div class="relative h-full w-full">
-        <div class="absolute top-0 h-screen right-0 left-0 bg-gray-200 dark:bg-[#001219] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(233,216,166,.15),rgba(255,255,255,0))] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,95,115,.25),rgba(255,255,255,0))]"></div>
+      <div class="absolute z-[-2] h-full w-full overflow-hidden min-w-[320px]">
+        <div class="relative h-full w-full">
+          <div class="absolute top-0 h-screen right-0 left-0 bg-gray-200 dark:bg-[#001219] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(233,216,166,.15),rgba(255,255,255,0))] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,95,115,.25),rgba(255,255,255,0))]"></div>
+        </div>
       </div>
-    </div>
     <Header />
     <slot />
     <Footer />
   </body>
 </html>
 <style is:global>
-  * {
-    transition: all 500ms ease;
-  }
   html {
     font-family: 'Plus Jakarta Sans Variable', sans-serif, system-ui;
     scroll-behavior: smooth;
@@ -53,6 +50,7 @@ const { title, description } = Astro.props
   }
 </style>
 <script is:inline>
+  document.doceume
   const polygon = document.getElementById('polygon')
   function generarClipPath() {
     const points = Array.from({ length: 16 }, () => {
