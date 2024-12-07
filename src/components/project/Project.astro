@@ -14,11 +14,11 @@ interface Props {
 const { title, description, link, github, image, tags } = Astro.props
 ---
 
-<div class="w-full group p-0.5 bg-[#bb3e03]/15 dark:bg-[#006073]/30 hover:bg-[#ca6702]/55 hover:dark:bg-[#0a9396] transition duration-500 rounded-lg relative myProjects after:absolute after:content-[''] after:top-6 after:dark:top-[30px] after:left-0 after:right-0 after:z-[-1] after:h-full after:w-full after:scale-[0.83] after:blur-[25px] after:opacity-0 after:hover:opacity-100 after:bg-[#ca6602]/55 after:dark:bg-[#0a9396]  after:transition after:duration-500">
-  <span class="absolute inset-0 z-[1] rounded-lg opacity-0 transition duration-500" ></span>
+<div class="w-full group p-0.5 bg-[#bb3e03]/15 dark:bg-[#006073]/30 hover:bg-[#ca6702]/55 hover:dark:bg-[#0a9396] transition duration-200 rounded-lg relative myProjects after:absolute after:content-[''] after:top-6 after:dark:top-[30px] after:left-0 after:right-0 after:z-[-1] after:h-full after:w-full after:scale-[0.83] after:blur-[25px] after:opacity-0 after:hover:opacity-100 after:bg-[#ca6602]/55 after:dark:bg-[#0a9396]  after:transition after:duration-200">
+  <span class="absolute inset-0 z-[1] rounded-lg opacity-0 transition duration-200" ></span>
   <div class="bg-gray-200 dark:bg-[#001219] p-6 max-sm:p-4 rounded-lg h-full relative z-[2]">
     <div class="relative">
-      <span style={{backgroundImage: `url(${image})`}} class="bg-cover bg-center  blur-lg md:blur-xl contrast-50 opacity-0 dark:group-hover:opacity-70 saturate-200 absolute inset-0 trasition duration-500" />
+      <span style={{backgroundImage: `url(${image})`}} class="bg-cover bg-center  blur-lg md:blur-xl contrast-50 opacity-0 dark:group-hover:opacity-70 saturate-200 absolute inset-0 trasition duration-200" />
       <div class="relative rounded-lg overflow-hidden aspect-video">
         <img
           class="sm:group-hover:scale-105 transition duration-1000 ease-in-out"
@@ -29,7 +29,7 @@ const { title, description, link, github, image, tags } = Astro.props
     </div>
     <div class="pt-4 max-sm:pt-2">
       <h3
-        class="mb-2 text-2xl font-bold text-gray-800 dark:text-gray-200 max-sm:text-xl group-hover:text-[#ca6702] dark:group-hover:text-[#0a9396] text-shadow transition duration-500"
+        class="mb-2 text-2xl font-bold text-gray-800 dark:text-gray-200 max-sm:text-xl group-hover:text-[#ca6702] dark:group-hover:text-[#0a9396] text-shadow transition duration-200"
       >
         {title}
       </h3>
