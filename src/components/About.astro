@@ -152,6 +152,14 @@ const knowledge = [
 </article>
 
 <style>
+  :root {
+    --brightness: brightness(80%)
+  }
+
+  html.dark {
+    --brightness: brightness(50%)
+  }
+
   .anim-blink-0 {
     span {
       animation: blink-0-span 5s;
@@ -166,8 +174,9 @@ const knowledge = [
   }
   @keyframes blink-0-img {
     55% { filter: grayscale(0%) brightness(100%);}
-    0%,19%,21%,23%,25%,54%,56%,100% { filter: grayscale(100%) brightness(50%);}
+    0%,19%,21%,23%,25%,54%,56%,100% { filter: grayscale(100%) var(--brightness);}
   }
+
   .anim-blink-1 {
     span {
       animation: blink-1-span 5s;
@@ -181,9 +190,10 @@ const knowledge = [
     0%,19%,21%,23%,25%,54%,56%,100% { opacity: 1;}
   }
   @keyframes blink-1-img {
-    20%,24% { filter: grayscale(100%) brightness(50%);}
+    20%,24% { filter: grayscale(100%) var(--brightness);}
     0%,19%,21%,23%,25%,54%,56%,100% { filter: grayscale(0%) brightness(100%);}
   }
+
   .anim-blink-2 {
     span {
       animation: blink-1-span 5s;
@@ -197,7 +207,7 @@ const knowledge = [
     0%,19%,21%,23%,25%,54%,56%,100% { opacity: 1;}
   }
   @keyframes blink-2-img {
-    20%,24%,55% { filter: grayscale(100%) brightness(50%);}
+    20%,24%,55% { filter: grayscale(100%) var(--brightness);}
     0%,19%,21%,23%,25%,54%,56%,100% { filter: grayscale(0%) brightness(100%);}
   }
 </style>
