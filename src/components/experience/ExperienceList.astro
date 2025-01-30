@@ -6,17 +6,21 @@ const experience = [
     date: 'Junio 2024',
     title: 'Desarrollador Web FullStack',
     company: 'Nodect',
-    description:
-      'Encargado del desarrollo de interfaces para la plataforma y de implementar funcionalidades en Frontend y Backend, utilizando las tecnologías como Nextjs y Expressjs.',
+    description: [
+      'Desarrollo de interfaces de usuario, asegurando una experiencia intuitiva y responsive.',
+      'Implementación de gráficas interactivas en el frontend para la visualización de datos.',
+      'Estructuración y desarrollo del backend, incluyendo la creación de esquemas y la implementación de endpoints eficientes.',
+      'Utilización de tecnologías modernas como Next.js, TypeScript, Express.js y MongoDB para garantizar un desarrollo escalable y mantenible.',
+    ],
     link: 'https://www.linkedin.com/company/nodect/',
   }
 ]
 ---
 
-<ol class="relative border-s border-[#bb3e03] dark:border-[#005f73]">
+<ol class="relative border-s-2 ms-[6px] border-[#bb3e03]/30 dark:border-[#005f73]/75">
   {
     experience.map((experience) => (
-      <li class="mb-10 ms-4">
+      <li class="ms-4">
         <Experience {...experience} />
       </li>
     ))
