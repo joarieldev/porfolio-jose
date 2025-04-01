@@ -1,31 +1,34 @@
 ---
+import LinkedIn from "./icons/LinkedIn.astro"
+import Mail from "./icons/Mail.astro"
+
 const anio = import.meta.env.YEAR??2024
 ---
+
 <footer class="flex justify-center">
   <div
     class="w-full max-w-screen-lg lg:px-28 p-2 max-lg:px-4 py-4 sm:py-8 flex sm:flex-row sm:justify-between flex-col-reverse items-center gap-2"
   >
     <span class="block text-sm text-gray-700 sm:text-center dark:text-gray-300 max-sm:text-xs">
       👨‍💻 {anio}
-      <a href="/#hero" class="hover:underline underline-offset-2 dark:hover:shadow-[0_10px_20px_-6px_rgba(229,231,235,1),0_10px_10px_-8px_rgba(229,231,235,0.60)] 
-         transition duration-[25ms]">José Ariel Martínez</a>. Inspired by
-      <a href="https://porfolio.dev/" target="_blank" class="hover:underline underline-offset-2 dark:hover:shadow-[0_10px_20px_-6px_rgba(229,231,235,1),0_10px_10px_-8px_rgba(229,231,235,0.60)] 
-         transition duration-[25ms]">midudev</a>.
+      <a href="/#hero" class="underline underline-offset-4 decoration-gray-500 hover:decoration-gray-900 dark:hover:decoration-gray-300 dark:hover:shadow-[0_10px_20px_-6px_rgba(229,231,235,1),0_10px_10px_-8px_rgba(229,231,235,0.60)] transition">José Ariel Martínez</a>. 
+      Inspired by
+      <a href="https://porfolio.dev/" target="_blank" class="underline underline-offset-4 decoration-gray-500 hover:decoration-gray-900 dark:hover:decoration-gray-300 
+      dark:hover:shadow-[0_10px_20px_-6px_rgba(229,231,235,1),0_10px_10px_-8px_rgba(229,231,235,0.60)] transition">midudev</a>.
     </span>
     <ul
-      class="flex flex-wrap items-justify-center text-sm font-medium gap-4 md:gap-6"
+      class="flex flex-wrap items-justify-center text-sm font-medium gap-3 md:gap-5"
     >
       <li class="text-gray-700 sm:text-center dark:text-gray-300">
-        <a href="/#experience" class="hover:underline underline-offset-2 dark:hover:shadow-[0_10px_20px_-6px_rgba(229,231,235,1),0_10px_10px_-8px_rgba(229,231,235,0.60)] 
-         transition duration-[25ms]">Experiencia</a>
+        <a href="mailto:joariel17@gmail.com" class="dark:hover:shadow-[0_10px_20px_-8px_rgba(229,231,235,1),0_10px_10px_-12px_rgba(229,231,235,0.60)] 
+         transition inline-flex items-end gap-1 border-b border-gray-500 hover:border-gray-900 dark:hover:border-gray-300">
+          <Mail class="max-sm:size-5" /> Gmail
+        </a>
       </li>
       <li class="text-gray-700 sm:text-center dark:text-gray-300">
-        <a href="/#projects" class="hover:underline underline-offset-2 dark:hover:shadow-[0_10px_20px_-6px_rgba(229,231,235,1),0_10px_10px_-8px_rgba(229,231,235,0.60)] 
-         transition duration-[25ms]">Proyectos</a>
-      </li>
-      <li class="text-gray-700 sm:text-center dark:text-gray-300">
-        <a href="/#about" class="hover:underline underline-offset-2 dark:hover:shadow-[0_10px_20px_-6px_rgba(229,231,235,1),0_10px_10px_-8px_rgba(229,231,235,0.60)] 
-         transition duration-[25ms]">Sobre mi
+        <a href="https://www.linkedin.com/in/joarieldev/" target="_blank" class="dark:hover:shadow-[0_10px_20px_-8px_rgba(229,231,235,1),0_10px_10px_-12px_rgba(229,231,235,0.60)] 
+         transition inline-flex items-end gap-1 border-b border-gray-500 hover:border-gray-900 dark:hover:border-gray-300">
+         <LinkedIn class="max-sm:size-5" /> LinkedIn
         </a>
       </li>
     </ul>
