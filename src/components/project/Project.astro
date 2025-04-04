@@ -16,21 +16,21 @@ const { title, description, link, github, image, tags } = Astro.props
 
 <div class="w-full group p-0.5 bg-[#bb3e03]/15 dark:bg-[#006073]/30 rounded-lg relative myProjects">
   <span class="absolute inset-0 z-[1] rounded-lg opacity-0 transition duration-200" ></span>
-  <div class="bg-gray-200 group-hover:bg-gray-200/95 dark:bg-[#001219] group-hover:dark:bg-[#001219]/90 p-6 max-sm:p-4 rounded-lg h-full relative z-[2]">
-    <div class="rounded-lg overflow-hidden aspect-video">
+  <div class="bg-gray-200 group-hover:bg-gray-200/95 dark:bg-[#001219] group-hover:dark:bg-[#001219]/90 rounded-lg h-full relative z-[2] flex flex-col">
+    <div class="overflow-hidden h-[14em] p-2">
       <img
-        class="sm:group-hover:scale-105 transition duration-1000 ease-in-out"
+        class="sm:group-hover:scale-110 transition duration-700 ease-in-out h-full w-full object-cover rounded-lg"
         src={image}
         alt={image}
       />
     </div>
-    <div class="pt-4 max-sm:pt-2">
+    <div class="px-3.5 pt-1.5 pb-3.5 flex flex-col grow">
       <h3
-        class="mb-2 text-2xl font-bold text-gray-800 dark:text-gray-200 max-sm:text-xl"
+        class="mb-1.5 sm:text-lg font-semibold uppercase text-gray-800 dark:text-gray-200"
       >
         {title}
       </h3>
-      <ul class="inline-flex flex-wrap gap-2 mb-2">
+      <ul class="inline-flex flex-wrap gap-2 mb-1.5">
         {
           tags.map((item) => (
             <li class={item.class}>
@@ -41,11 +41,11 @@ const { title, description, link, github, image, tags } = Astro.props
         }
       </ul>
       <p
-        class="mb-3 text-base font-light text-gray-700 dark:text-gray-200 max-sm:text-sm text-pretty"
+        class="mb-1.5 sm:text-sm font-normal text-gray-700 dark:text-gray-200 text-xs text-pretty"
       >
         {description}
       </p>
-      <ul class="flex flex-wrap gap-2">
+      <ul class="flex grow justify-start items-end">
         {
           github && (
             <li>
@@ -53,10 +53,10 @@ const { title, description, link, github, image, tags } = Astro.props
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center px-3 py-2 text-sm font-semibold text-center transition border rounded-lg text-gray-800 dark:text-gray-200 border-[#000000] dark:border-gray-500 hover:bg-[#000000]/20 dark:hover:bg-gray-500/40 gap-2 max-sm:text-xs max-sm:font-medium"
+                class="inline-flex items-center justify-center p-2 text-sm font-semibold text-center transition rounded-lg text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-[#000000]/10 dark:hover:bg-gray-500/35 gap-2"
+                title="Codigo"
               >
                 <GitHub class="size-5" />
-                Código
               </a>
             </li>
           )
@@ -68,10 +68,10 @@ const { title, description, link, github, image, tags } = Astro.props
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center px-3 py-2 text-sm font-semibold text-center transition border rounded-lg dark:text-sky-500 text-amber-700 dark:border-sky-700 border-amber-700  dark:hover:bg-sky-600/30 hover:bg-amber-600/20 gap-2 max-sm:text-xs max-sm:font-medium"
+                class="inline-flex items-center justify-center p-2 text-sm font-semibold text-center transition rounded-lg text-gray-500 hover:text-amber-700 dark:text-gray-400 dark:hover:text-sky-400 dark:hover:bg-sky-600/30 hover:bg-amber-600/20 gap-2"
+                title="Demo"
               >
                 <World class="size-5" />
-                Demo
               </a>
             </li>
           )
