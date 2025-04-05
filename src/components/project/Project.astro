@@ -17,31 +17,31 @@ const { title, description, link, github, image, tags } = Astro.props
 <div class="w-full group p-0.5 bg-[#bb3e03]/15 dark:bg-[#006073]/30 rounded-lg relative myProjects">
   <span class="absolute inset-0 z-[1] rounded-lg opacity-0 transition duration-200" ></span>
   <div class="bg-gray-200 group-hover:bg-gray-200/95 dark:bg-[#001219] group-hover:dark:bg-[#001219]/90 rounded-lg h-full relative z-[2] flex flex-col">
-    <div class="overflow-hidden h-[14em] p-2">
+    <div class="overflow-hidden h-[12em] sm:h-[13em] 2xl:h-[14em] p-2">
       <img
         class="sm:group-hover:scale-110 transition duration-700 ease-in-out h-full w-full object-cover rounded-lg"
         src={image}
         alt={image}
       />
     </div>
-    <div class="px-3.5 pt-1.5 pb-3.5 flex flex-col grow">
+    <div class="px-3.5 pt-1.5 pb-3.5 flex flex-col grow space-y-1 sm:space-y-1.5">
       <h3
-        class="mb-1.5 sm:text-lg font-semibold uppercase text-gray-800 dark:text-gray-200"
+        class="sm:text-lg font-semibold uppercase text-gray-800 dark:text-gray-200"
       >
         {title}
       </h3>
-      <ul class="inline-flex flex-wrap gap-2 mb-1.5">
+      <ul class="inline-flex flex-wrap gap-2">
         {
           tags.map((item) => (
-            <li class={`inline-flex gap-1 items-center text-xs font-normal text-gray-800 dark:text-white px-2 py-1 rounded-full ${item.class}`}>
-              <img src={item.icon} alt={item.name} class="size-4" />
+            <li class={`inline-flex gap-1 items-center text-[10px] sm:text-xs font-normal text-gray-800 dark:text-white px-1 py-0.5 sm:px-2 sm:py-1 rounded-full ${item.class}`}>
+              <img src={item.icon} alt={item.name} class="size-3 sm:size-4" />
               {item.name}
             </li>
           ))
         }
       </ul>
       <p
-        class="mb-1.5 sm:text-sm font-normal text-gray-700 dark:text-gray-200 text-xs text-pretty"
+        class="text-xs sm:text-sm font-normal text-gray-700 dark:text-gray-200 text-pretty"
       >
         {description}
       </p>
