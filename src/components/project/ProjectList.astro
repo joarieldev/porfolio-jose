@@ -1,130 +1,142 @@
 ---
-import Project from './Project.astro'
+import Project from "./Project.astro";
 
 const tags = {
   React: {
-    name: 'React',
-    class: 'bg-sky-600/15 dark:bg-sky-600/40',
-    icon: '/React.svg',
+    name: "React",
+    class: "bg-sky-600/15 dark:bg-sky-600/40",
+    icon: "/React.svg",
   },
   TailwindCss: {
-    name: 'TailwindCSS',
-    class: 'bg-cyan-600/15 dark:bg-cyan-600/40',
-    icon: '/TailwindCSS.svg',
+    name: "TailwindCSS",
+    class: "bg-cyan-600/15 dark:bg-cyan-600/40",
+    icon: "/TailwindCSS.svg",
   },
   Nextjs: {
-    name: 'Nextjs',
-    class: 'bg-gray-600/15 dark:bg-gray-600/40',
-    icon: '/Nextjs.svg',
+    name: "Nextjs",
+    class: "bg-gray-600/15 dark:bg-gray-600/40",
+    icon: "/Nextjs.svg",
   },
   MaterialUI: {
-    name: 'MaterialUI',
-    class: 'bg-blue-600/15 dark:bg-blue-600/40',
-    icon: '/MaterialUI.svg',
+    name: "MaterialUI",
+    class: "bg-blue-600/15 dark:bg-blue-600/40",
+    icon: "/MaterialUI.svg",
   },
   Astro: {
-    name: 'Astro',
-    class: 'bg-stone-600/15 dark:bg-stone-600/40',
-    icon: '/Astro.svg'
+    name: "Astro",
+    class: "bg-stone-600/15 dark:bg-stone-600/40",
+    icon: "/Astro.svg",
   },
-  Authjs:{
-    name: 'Authjs',
-    class: 'bg-violet-600/15 dark:bg-violet-600/40',
-    icon: '/Authjs.webp'
+  Authjs: {
+    name: "Authjs",
+    class: "bg-violet-600/15 dark:bg-violet-600/40",
+    icon: "/Authjs.webp",
   },
-  TanStack:{
-    name: 'TanStack Query',
-    class: 'bg-orange-600/15 dark:bg-orange-600/40',
-    icon: '/TanStack.webp'
+  TanStack: {
+    name: "TanStack Query",
+    class: "bg-orange-600/15 dark:bg-orange-600/40",
+    icon: "/TanStack.webp",
   },
-  Expressjs:{
-    name: 'Expressjs',
-    class: 'bg-zinc-600/15 dark:bg-zinc-600/40',
-    icon: '/Expressjs.svg'
+  Expressjs: {
+    name: "Expressjs",
+    class: "bg-zinc-600/15 dark:bg-zinc-600/40",
+    icon: "/Expressjs.svg",
   },
   MySQL: {
-    name: 'MySQL',
-    class: 'bg-teal-600/15 dark:bg-teal-600/20',
-    icon: '/MySQL.svg'
+    name: "MySQL",
+    class: "bg-teal-600/15 dark:bg-teal-600/20",
+    icon: "/MySQL.svg",
   },
-  Swagger:{
-    name: 'Swagger',
-    class: 'bg-green-600/15 dark:bg-green-600/40',
-    icon: '/Swagger.svg'
+  Swagger: {
+    name: "Swagger",
+    class: "bg-green-600/15 dark:bg-green-600/40",
+    icon: "/Swagger.svg",
   },
   HTML: {
-    name: 'HTML',
-    class: 'bg-amber-600/15 dark:bg-amber-600/40',
-    icon: '/HTML.svg'
+    name: "HTML",
+    class: "bg-amber-600/15 dark:bg-amber-600/40",
+    icon: "/HTML.svg",
   },
   CSS: {
-    name: 'CSS',
-    class: 'bg-violet-600/15 dark:bg-violet-600/40',
-    icon: '/CSS.svg'
+    name: "CSS",
+    class: "bg-violet-600/15 dark:bg-violet-600/40",
+    icon: "/CSS.svg",
   },
   JavaScript: {
-    name: 'JavaScript',
-    class: 'bg-yellow-600/15 dark:bg-yellow-600/40',
-    icon: '/JavaScript.svg'
+    name: "JavaScript",
+    class: "bg-yellow-600/15 dark:bg-yellow-600/40",
+    icon: "/JavaScript.svg",
   },
   Cloudinary: {
-    name: 'Cloudinary',
-    class: 'bg-blue-600/15 dark:bg-blue-600/40',
-    icon: '/Cloudinary.svg'
-  }
-}
+    name: "Cloudinary",
+    class: "bg-blue-600/15 dark:bg-blue-600/40",
+    icon: "/Cloudinary.svg",
+  },
+};
 const projects = [
   {
-    title: 'Feria de las Plantas',
-    description: 'Pagina web no oficial para APPOJUY feria de las plantas. Creada con vanilla js.',
-    link: 'https://plant-fair.netlify.app/',
-    github: 'https://github.com/joarieldev/plant-fair',
-    image: '/projects/plant-fair.webp',
-    tags: [tags.HTML, tags.CSS, tags.JavaScript],
-  },
-  {
-    title: 'Genera un Halloween',
-    description: 'Edita tus fotos para generar un halloween con tus amigos. Proyecto creado para la hackathon de Midudev y Cloudinary.',
-    link: 'https://generate-halloween-img.vercel.app/',
-    github: 'https://github.com/joarieldev/generate-halloween-img',
-    image: '/projects/generate-halloween.webp',
-    tags: [tags.Nextjs, tags.Cloudinary, tags.TailwindCss]
-  },
-  {
-    title: 'TextoVoz',
+    title: "Genera un Halloween",
     description:
-      'Convierte texto escrito en audio con una interfaz fácil de usar, cuenta con opciones de personalización y soporta múltiples idiomas.',
-    link: 'https://text-to-speech-8r3.pages.dev/',
-    github: 'https://github.com/joarieldev/text-to-speech',
-    image: '/projects/textovoz.webp',
-    tags: [tags.Astro, tags.TailwindCss],
+      "Edita tus fotos para generar un halloween con tus amigos. Proyecto creado para la hackathon de Midudev y Cloudinary.",
+    link: "https://generate-halloween-img.vercel.app/",
+    github: "https://github.com/joarieldev/generate-halloween-img",
+    image: "/projects/generate-halloween.webp",
+    tags: [tags.Nextjs, tags.Cloudinary, tags.TailwindCss],
   },
   {
-    title: 'Order Up',
+    title: "Order Up",
     description:
-      'Una aplicación web simple para la gestión de órdenes. Creada con Nextjs y Localstorage.',
-    link: 'https://order-up-pi.vercel.app/',
-    github: 'https://github.com/joarieldev/order-up',
-    image: '/projects/order-up.webp',
+      "Una aplicación web simple para la gestión de órdenes. Creada con Nextjs y Localstorage.",
+    link: "https://order-up-pi.vercel.app/",
+    github: "https://github.com/joarieldev/order-up",
+    image: "/projects/order-up.webp",
     tags: [tags.Nextjs, tags.MaterialUI, tags.Authjs],
   },
   {
-    title: 'Adoptar Mascotas',
+    title: "Poweramp Clone",
     description:
-      'Sitio Web para la adopciòn de mascotas. Mas de 5 especies para adoptar. Creada desde cero con React y Tailwind CSS.',
-    link: 'https://adoptar-mascota.vercel.app/',
-    github: 'https://github.com/joarieldev/AdoptarMascota',
-    image: '/projects/adoptar-mascota.webp',
+      "Clon de la interfaz de Poweramp, un reproductor de música para teléfono móvil. Creada con Astro, React y Tailwind CSS.",
+    link: "https://poweramp-clone.vercel.app/",
+    github: "https://github.com/joarieldev/PowerampClone",
+    image: "/projects/poweramp-clone.webp",
+    tags: [tags.Astro, tags.React, tags.TailwindCss],
+  },
+  {
+    title: "TextoVoz",
+    description:
+      "Convierte texto escrito en audio con una interfaz fácil de usar, cuenta con opciones de personalización y soporta múltiples idiomas.",
+    link: "https://text-to-speech-8r3.pages.dev/",
+    github: "https://github.com/joarieldev/text-to-speech",
+    image: "/projects/textovoz.webp",
+    tags: [tags.Astro, tags.TailwindCss],
+  },
+  {
+    title: "Adoptar Mascotas",
+    description:
+      "Sitio Web para la adopciòn de mascotas. Mas de 5 especies para adoptar. Creada desde cero con React y Tailwind CSS.",
+    link: "https://adoptar-mascota.vercel.app/",
+    github: "https://github.com/joarieldev/AdoptarMascota",
+    image: "/projects/adoptar-mascota.webp",
     tags: [tags.React, tags.TailwindCss, tags.TanStack],
   },
   {
-    title: 'API GestiónVentas',
-    description: 'Backend para gestionar ventas de productos, con control de stock, creada en Node.js.',
-    github: 'https://github.com/joarieldev/api-sales-management',
-    image: '/projects/api-sales-management.webp',
+    title: "Feria de las Plantas",
+    description:
+      "Pagina web no oficial para APPOJUY feria de las plantas. Creada con vanilla js.",
+    link: "https://plant-fair.netlify.app/",
+    github: "https://github.com/joarieldev/plant-fair",
+    image: "/projects/plant-fair.webp",
+    tags: [tags.HTML, tags.CSS, tags.JavaScript],
+  },
+  {
+    title: "API GestiónVentas",
+    description:
+      "Backend para gestionar ventas de productos, con control de stock, creada en Node.js.",
+    github: "https://github.com/joarieldev/api-sales-management",
+    image: "/projects/api-sales-management.webp",
     tags: [tags.Expressjs, tags.MySQL, tags.Swagger],
-  }
-]
+  },
+];
 ---
 
 <article class="grid sm:grid-cols-2 2xl:grid-cols-3 gap-3 sm:gap-6">
