@@ -1,5 +1,6 @@
 ---
 import Project from "./Project.astro";
+import ProjectEmpty from "./ProjectEmpty.astro";
 
 const tags = {
   React: {
@@ -136,9 +137,24 @@ const projects = [
     image: "/projects/api-sales-management.webp",
     tags: [tags.Expressjs, tags.MySQL, tags.Swagger],
   },
+  {
+    title: "",
+    description: "pronto",
+    github: "",
+    image: "",
+    tags: [],
+  },
 ];
 ---
 
 <article class="grid sm:grid-cols-2 2xl:grid-cols-3 gap-3 sm:gap-6">
-  {projects.map((project) => <Project {...project} />)}
+  {
+    projects.map((project) =>
+      project.title !== "" ? (
+        <Project {...project} />
+      ) : (
+        <ProjectEmpty {...project} />
+      )
+    )
+  }
 </article>

@@ -1,0 +1,114 @@
+---
+interface Props {
+  description: string;
+}
+
+const { description } = Astro.props;
+---
+
+<div
+  class="w-full group p-0.5 bg-[#bb3e03]/15 dark:bg-[#006073]/30 rounded-lg relative myProjects"
+>
+  <span
+    class="absolute inset-0 z-[1] rounded-lg opacity-0 transition duration-200"
+  ></span>
+  <div
+    class="bg-gray-200 group-hover:bg-gray-200/95 dark:bg-[#001219] group-hover:dark:bg-[#001219]/90 rounded-lg h-full relative z-[2] flex flex-col"
+  >
+    <div class="p-2 grid place-content-center h-full">
+      <h3 class="sm:text-xl font-semibold uppercase neonText">
+        {description}
+      </h3>
+    </div>
+  </div>
+</div>
+
+<style>
+  :root {
+    --text: #1f2937;
+    --text-nd: #bb3e03;
+    --anim: pulsate-light 1.5s infinite alternate;
+    --shad: 
+      /* 0 0 7px var(--text), */
+      /* 0 0 10px var(--text), */
+      /* 0 0 21px var(--text), */
+      0 0 42px var(--text-nd),
+      /* 0 0 82px var(--text-nd), */
+      0 0 92px var(--text-nd),
+      0 0 102px var(--text-nd),
+      0 0 151px var(--text-nd);
+  }
+
+  html.dark {
+    --text: #e5e7eb;
+    --text-nd: #006073;
+    --anim: pulsate-dark 1.5s infinite alternate;
+    --shad:
+      /* 0 0 7px var(--text), */
+      /* 0 0 10px var(--text), */
+      0 0 21px var(--text),
+      0 0 42px var(--text-nd),
+      0 0 82px var(--text-nd),
+      0 0 92px var(--text-nd),
+      0 0 102px var(--text-nd),
+      0 0 151px var(--text-nd);
+  }
+
+  .neonText {
+    color: var(--text);
+    text-shadow: var(--shad);
+    animation: var(--anim);
+  }
+
+  @keyframes pulsate-dark {
+    100% {
+      text-shadow:
+      /* 0 0 4px var(--text), */
+        /* 0 0 11px var(--text), */
+        /* 0 0 19px var(--text), */
+        0 0 40px var(--text-nd),
+        0 0 80px var(--text-nd),
+        0 0 90px var(--text-nd),
+        0 0 100px var(--text-nd),
+        0 0 150px var(--text-nd);
+    }
+
+    0% {
+      text-shadow:
+      /* 0 0 2px var(--text), */
+      /* 0 0 4px var(--text), */
+        0 0 6px var(--text),
+        0 0 10px var(--text-nd),
+        0 0 45px var(--text-nd),
+        0 0 55px var(--text-nd),
+        0 0 70px var(--text-nd),
+        0 0 80px var(--text-nd);
+    }
+  }
+
+  @keyframes pulsate-light {
+    100% {
+      text-shadow:
+        /* 0 0 4px var(--text), */
+        /* 0 0 11px var(--text), */
+        /* 0 0 19px var(--text), */
+        0 0 40px var(--text-nd),
+        /* 0 0 80px var(--text-nd), */ 
+        0 0 90px var(--text-nd),
+        0 0 100px var(--text-nd),
+        0 0 150px var(--text-nd);
+    }
+
+    0% {
+      text-shadow:
+        /* 0 0 2px var(--text), */
+        /* 0 0 4px var(--text), */
+        /* 0 0 6px var(--text), */
+        0 0 10px var(--text-nd),
+        /* 0 0 45px var(--text-nd), */ 
+        0 0 55px var(--text-nd),
+        0 0 70px var(--text-nd),
+        0 0 80px var(--text-nd);
+    }
+  }
+</style>
